@@ -31,6 +31,7 @@ class RoomController {
             res.status(500).json({ error: "Internal Server Error" });
         }
     }
+    //Upload file in the study room
     static async uploadFile(req, res) {
         try {
             if (!req.file) {
