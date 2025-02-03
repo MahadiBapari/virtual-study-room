@@ -1,4 +1,5 @@
 const Room = require("../models/roomModel");
+const upload = require("../middleware/upload");
 
 class RoomController {
     
@@ -26,6 +27,18 @@ class RoomController {
             }
 
             res.json({ message: "Joined the room successfully", room });
+        } catch (error) {
+            res.status(500).json({ error: "Internal Server Error" });
+        }
+    }
+    static async uploadFile(req, res) {
+        try {
+            if (!req.file) {
+                return res.status(400).json({ error: "No file uploaded" });
+            }
+
+            res.json({ filePath: `/uploads/${req.file.filename}` });
+
         } catch (error) {
             res.status(500).json({ error: "Internal Server Error" });
         }
