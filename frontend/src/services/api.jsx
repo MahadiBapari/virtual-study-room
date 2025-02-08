@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5200/api"; // Change if needed
+const API_BASE_URL = "http://localhost:5200/api"; 
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -11,12 +11,12 @@ const api = axios.create({
 
 // Register
 export const registerUser = async (userData) => {
-  return await api.post("/user/register", userData);
+  return await api.post("/users/register", userData);
 };
 
 // Login
 export const loginUser = async (userData) => {
-  return await api.post("/user/login", userData);
+  return await api.post("/users/login", userData);
 };
 
 // Get User's Rooms

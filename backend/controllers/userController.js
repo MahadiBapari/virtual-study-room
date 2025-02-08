@@ -5,6 +5,7 @@ class UserController{
 
     static async register(req,res){
         const{email, username, password} = req.body;
+        console.log("Request Body:", req.body);
 
         try {
             const existingEmail = await User.findOne({ email })
@@ -24,7 +25,8 @@ class UserController{
             res.status(201).json({message: 'Registration Successful', user})
         
         } catch (error) {
-            res.status(500).json({ error: 'Internal Server Error' });
+            console.error("Error in /register:", error); 
+            res.status(500).json({ error: error.message, details: error.errors });
         }
     }
 

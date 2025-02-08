@@ -3,12 +3,17 @@ const express = require('express');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const roomRoutes = require('./routes/roomRoutes');
+const cors = require("cors");
+
 
 
 const app = express();
 
 // Connect to database
 connectDB();
+
+//Connect to frontend
+app.use(cors());
 
 // Middleware
 app.use(express.json());
