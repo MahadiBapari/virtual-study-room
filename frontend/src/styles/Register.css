@@ -1,0 +1,65 @@
+/* Register Page Container */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  /* Register Title */
+  .register-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Register Form */
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+  }
+  
+  /* Input Fields */
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .input-field:focus {
+    border-color: #28a745;
+  }
+  
+  /* Register Button */
+  .register-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .register-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    .register-form {
+      width: 90%;
+    }
+  }

@@ -31,10 +31,6 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
-      <footer className="footer">
-        <p>&copy; 2025 Virtual Study Room. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

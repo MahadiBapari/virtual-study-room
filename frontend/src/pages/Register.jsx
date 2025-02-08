@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import "../styles/Register.css"
 
 const Register = () => {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
@@ -23,13 +24,13 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Register</button>
+    <div  className="register-container">
+      <h2 className="register-title">Register</h2>
+      <form onSubmit={handleSubmit} className="register-form">
+        <input type="text" name="username" placeholder="Username" onChange={handleChange} required className="input-field"/>
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required className="input-field"/>
+        <input type="password" name="password" placeholder="Password" onChange={handleChange} required className="input-field"/>
+        <button type="submit" className="register-btn">Register</button>
       </form>
     </div>
   );

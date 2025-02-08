@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { loginUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import "../styles/Login.css"
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -12,7 +13,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Form submitted!");
     console.log("Form submitted!");
     try {
         const res = await loginUser(form);
@@ -24,19 +24,19 @@ const Login = () => {
 
         localStorage.setItem("token", res.data.token);
         console.log("Token Stored:", localStorage.getItem("token"));
-        navigate("/");
+        navigate("/Dashboard");
     } catch (error) {
         console.error("Login Error:", error.response ? error.response.data : error.message);
     }
 };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit" onClick={handleSubmit}>Login</button>
+    <div className="login-container">
+      <h2 className="login-title">Login</h2>
+      <form onSubmit={handleSubmit} className="login-form">
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required className="input-field"/>
+        <input type="password" name="password" placeholder="Password" onChange={handleChange} required className="input-field" />
+        <button type="submit" onClick={handleSubmit} className="login-btn">Login</button>
       </form>
     </div>
   );
