@@ -24,7 +24,7 @@ const Login = () => {
 
         localStorage.setItem("token", res.data.token);
         console.log("Token Stored:", localStorage.getItem("token"));
-        navigate("/dashboard");
+        navigate("/");
     } catch (error) {
         console.error("Login Error:", error.response ? error.response.data : error.message);
     }
